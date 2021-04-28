@@ -1,0 +1,24 @@
+provider "google" {
+  credentials = file("evolve-3-workstream-e0d2ba41e2ed.json")
+  project = "evolve-3-workstream"
+   region  = "us-central1"
+  zone    = "us-central1-c"
+}
+
+resource "google_compute_instance" "default" {
+  name         = "mekhavm01"
+  machine_type = "f1-micro"
+
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+ network_interface {
+    # A default network is created for all GCP projects
+    network = "default"
+    access_config {
+    }
+  }
+}
