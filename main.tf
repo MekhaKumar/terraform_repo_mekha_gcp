@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("evolve-3-workstream-e0d2ba41e2ed.json")
+ 
   project = "evolve-3-workstream"
    region  = "us-central1"
   zone    = "us-central1-c"
